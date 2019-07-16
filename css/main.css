@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+.container {
+  width: 1180px;
+  margin: 0 auto;
+}
+.footer {
+  padding: 81px 0 87px 0;
+}
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__copyright,
+.footer__link {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 14px;
+  color: #1f252d;
+}
+.footer__copyright {
+  margin: 0;
+}
+.footer__link {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+}
+.footer__icon {
+  fill: #079fc2;
+  margin: 0 13px 0 0;
+}
