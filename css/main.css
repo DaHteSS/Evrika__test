@@ -15,11 +15,20 @@ body {
 .offers__item {
   display: flex;
   background: #ffffff;
+  margin: 0 0 40px 0;
+}
+.offers__item:last-child {
+  margin: 0 0 52px 0;
 }
 .offers__content {
-  width: 100%;
-  padding: 35px 53px 41px;
+  position: relative;
+  padding: 35px 53px 38px;
   box-sizing: border-box;
+  width: 580px;
+}
+.offers__content_right {
+  position: relative;
+  line-height: 0;
 }
 .offers__title {
   margin: 0 0 15px 0;
@@ -38,6 +47,12 @@ body {
 }
 .offers__icon_lime {
   fill: #b1d431;
+}
+.offers__icon_gray {
+  fill: #aeaeae;
+}
+.offers__icon_blue {
+  fill: #3072c4;
 }
 .offers__time {
   opacity: 0.6;
@@ -79,6 +94,9 @@ body {
   padding-left: 25px;
 }
 .offers__tags {
+  position: absolute;
+  bottom: 38px;
+  width: 474px;
   display: flex;
   justify-content: space-between;
 }
@@ -99,6 +117,77 @@ body {
   font-size: 13px;
   font-weight: 500;
   text-transform: uppercase;
+}
+.offers__link:nth-child(1) {
+  width: 108px;
+}
+.offers__link:nth-child(2) {
+  width: 125px;
+}
+.offers__link:nth-child(3) {
+  width: 102px;
+}
+.offers__link:nth-child(4) {
+  width: 121px;
+}
+.offers__more {
+  position: absolute;
+  padding: 15px 14px 16px 20px;
+  right: 0;
+  top: 0;
+  border-radius: 0 0 0 4px;
+  background-color: #f0f0f0;
+  opacity: 0.75;
+}
+.offers__more-link {
+  display: flex;
+  align-items: center;
+  margin: 0 0 11px 0;
+  color: #404853;
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none;
+}
+.offers__more-link:last-child {
+  margin: 0;
+}
+.offers__more-icon_top {
+  margin: 0 17px 0 0;
+}
+.offers__more-icon_btm {
+  margin: 0 13px 0 0;
+}
+.offers__btn {
+  position: absolute;
+  bottom: 45px;
+  left: 50%;
+  padding: 17px 72px;
+  margin-left: -111px;
+  display: block;
+  line-height: 1;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(116, 207, 183, 0.46);
+  border-radius: 4px;
+  background: #079fc2;
+}
+.offers__all {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 279px;
+  height: 48px;
+  line-height: 48px;
+  border-radius: 4px;
+  background-color: #74cfb7;
+  margin: 0 auto;
 }
 .about {
   padding: 67px 0 0 0;
