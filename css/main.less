@@ -27,6 +27,8 @@ body {
     padding: 35px 53px 38px;
     box-sizing: border-box;
     width: 580px;
+    height: 520px;
+    overflow-y: auto;
     &_right {
       position: relative;
       line-height: 0;
@@ -71,7 +73,7 @@ body {
   &__table {
     border-collapse: collapse;
     box-sizing: border-box;
-    margin: 0 0 24px 0;
+    margin: 0 0 30px 0;
   }
   &__cell {
     vertical-align: top;
@@ -98,9 +100,6 @@ body {
     }
   }
   &__tags {
-    position: absolute;
-    bottom: 38px;
-    width: 474px;
     display: flex;
     justify-content: space-between;
     &-icon {
