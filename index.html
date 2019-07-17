@@ -112,7 +112,7 @@
       </button>
       <div class="container filter__container">
         <h1 class="filter__title">Купить квартиру в новостройке</h1>
-        <form class="filter__content">
+        <form method="GET" class="filter__content">
           <label class="filter__label filter__label-range">Стоимость, млн руб.</label>
           <div class="filter__row">
             <div class="filter__range">
@@ -129,20 +129,42 @@
             </div>
           </div>
           <div class="filter__row">
-            <select class="filter__select">
-              <option value="metro_1">Станция метро</option>
+            <select name="metro" class="filter__select_hidden">
+              <option value="0">Станция метро</option>
+              <option value="1">Комсомольская</option>
+              <option value="2">Строгино</option>
+              <option value="3">Комсомольская</option>
+              <option value="4">Строгино</option>
+              <option value="5">Комсомольская</option>
+              <option value="6">Строгино</option>
+              <option value="7">Комсомольская</option>
+              <option value="8">Строгино</option>
             </select>
-            <select class="filter__select">
-              <option value="type_1">Тип жилья</option>
+            <select name="type" class="filter__select_hidden">
+              <option value="0">Тип жилья</option>
+              <option value="1">Тип жилья</option>
+              <option value="2">Тип жилья</option>
+              <option value="3">Тип жилья</option>
+              <option value="4">Тип жилья</option>
             </select>
-            <select class="filter__select">
-              <option value="space_1">Площадь</option>
+            <select name="space" class="filter__select_hidden">
+              <option value="0">Площадь</option>
+              <option value="1">Площадь</option>
+              <option value="2">Площадь</option>
             </select>
-            <select class="filter__select">
-              <option value="finish_1">Тип отделки</option>
+            <select name="finish" class="filter__select_hidden">
+              <option value="0">Тип отделки</option>
+              <option value="1">Тип отделки</option>
+              <option value="2">Тип отделки</option>
+              <option value="3">Тип отделки</option>
             </select>
-            <select class="filter__select">
-              <option value="deadline_1">Срок сдачи</option>
+            <select name="deadline" class="filter__select_hidden">
+              <option value="0">Срок сдачи</option>
+              <option value="1">Срок сдачи</option>
+              <option value="2">Срок сдачи</option>
+              <option value="3">Срок сдачи</option>
+              <option value="4">Срок сдачи</option>
+              <option value="5">Срок сдачи</option>
             </select>
             <input type="submit" class="filter__submit" value="Найти">
           </div>

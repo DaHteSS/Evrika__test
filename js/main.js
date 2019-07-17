@@ -1,13 +1,13 @@
 // Focus input search.
 $(".header__icon").on("click", () => {
   $(".header__search").focus();
-})
+});
 // Zooming input search and add new styles for bg.
 $(".header__search").focusin(function() {
   $(".header_bottom").css("background", "#f0f0f0");
 });
 $(".header__search").focusout(function() {
-  if($(".header__search").hasClass("header__search_float")) {
+  if ($(".header__search").hasClass("header__search_float")) {
     $(".header_bottom").css("background", "#f0f0f0");
   } else {
     $(".header_bottom").css("background", "#ffffff");
@@ -15,7 +15,7 @@ $(".header__search").focusout(function() {
 });
 // Adding range in form.
 // К сожалению, не смог разобраться, как сделать ползунок цен без плагина...Да и с плагином не особо получилось.
-$( ".filter__range" ).slider({
+$(".filter__range").slider({
   min: 1,
   max: 69,
   range: true,
@@ -23,7 +23,7 @@ $( ".filter__range" ).slider({
   values: [0, 69]
 });
 // Adding styles for float menu.
-$(document).on('scroll', function () {
+$(document).on("scroll", function() {
   let position = $(window).scrollTop();
   if (position > 350) {
     $(".header").addClass("header_float");
@@ -53,5 +53,73 @@ $(document).on('scroll', function () {
     $(".header__label").removeClass("header__label_float");
     $(".header__search").removeClass("header__search_float");
     $(".main").css("margin", "0");
+  }
+});
+
+// custom select
+// Взял код из одного своего проекта.
+let selectDur = 500;
+
+$(".filter__select_hidden").each(function() {
+  let $this = $(this),
+    selectOption = $this.find("option"),
+    selectOptionLength = selectOption.length,
+    selectedOption = selectOption.filter(":selected");
+  $this.hide();
+  $this.wrap('<div class="filter__select"></div>');
+  $("<div>", {
+    class: "filter__gap",
+    text: selectedOption.text()
+  }).insertAfter($this);
+  let selectGap = $this.next(".filter__gap");
+  $("<ul>", {
+    class: "filter__list"
+  }).insertAfter(selectGap);
+  let selectList = selectGap.next(".filter__list");
+  for (let i = 0; i < selectOptionLength; i++) {
+    $("<li>", {
+      class: "filter__item",
+      html: $("<span>", {
+        class: "filter__value",
+        text: selectOption.eq(i).text()
+      })
+    })
+      .attr("data-value", selectOption.eq(i).val())
+      .appendTo(selectList);
+  }
+  let selectItem = selectList.find("li");
+  selectList.slideUp(0);
+  selectGap.on("click", function(e) {
+    if (!$(this).hasClass("on")) {
+      $(this).addClass("on");
+      selectList.slideDown(selectDur);
+
+      selectItem.first().css("display", "none");
+      selectItem.on("click", function() {
+        selectItem.removeClass("selected");
+        selectOption.removeAttr("selected");
+        selectOption.eq(selectItem.index(this)).attr("selected", true);
+        $(this).addClass("selected");
+        selectGap.text(
+          $(this)
+            .find("span")
+            .text()
+        );
+        selectList.slideUp(selectDur);
+        selectGap.removeClass("on");
+      });
+    } else {
+      selectList.slideUp(selectDur);
+      $(this).removeClass("on");
+    }
+  });
+});
+
+$(document).mouseup(function (e){
+  let gap = $(".filter__gap.on"),
+      list = $(".filter__list");
+  if (!gap.is(e.target) && gap.has(e.target).length === 0) {
+    gap.removeClass("on");
+    list.slideUp(selectDur)
   }
 });
