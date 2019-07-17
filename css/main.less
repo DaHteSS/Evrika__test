@@ -1,3 +1,5 @@
+@container-width: 1180px;
+
 body {
   margin: 0;
   padding: 0;
@@ -6,8 +8,176 @@ body {
 }
 
 .container {
-  width: 1180px;
+  width: @container-width;
   margin: 0 auto;
+}
+
+.metro {
+  &__icon {
+    margin: 0 14px 0 0;
+    &_lime {
+      fill: #b1d431;
+    }
+    &_gray {
+      fill: #aeaeae;
+    }
+    &_blue {
+      fill: #3072c4;
+    }
+    &_orange {
+      fill: #fbaa34;
+    }
+  }
+}
+
+// header
+
+.header {
+  &_top {
+    background: #f7f7f7;
+  }
+  &_bottom {
+    background: #ffffff;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 187px;
+    height: 128px;
+    background: #74cfb7;
+    text-decoration: none;
+  }
+  &__name, &__address, &__phone, &__time {
+    color: #1f252d;
+    display: block;
+    font-size: 20px;
+  }
+  &__name {
+    font-weight: 500;
+    margin: 0 0 9px 0;
+  }
+  &__address {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  &__phone {
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 0 7px 0;
+  }
+  &__time {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    box-shadow: 0 4px 10px rgba(116, 207, 183, 0.46);
+    border-radius: 4px;
+    background: #079fc2;
+    transition: 0.3s linear;
+    &:hover {
+      background: #74cfb7;
+    }
+  }
+  &__menu {
+    box-sizing: border-box;
+    border-bottom: 4px solid #74cfb7;
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__item {
+    list-style-type: none;
+    box-sizing: border-box;
+    position: relative;
+    &:nth-child(7), &:last-child {
+      &:after {
+        border: none;
+      }
+    }
+    &:after {
+      content: '';
+      border-right: 1px solid #e1e1e1;
+      position: absolute;
+      top: 50%;
+      margin-top: -6px;
+      right: -18px;
+      height: 11px;
+    }
+  }
+  &__link {
+    display: block;
+    color: #404853;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 25px 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.3s linear;
+    &:hover {
+      color: #079fc2;
+    }
+  }
+  &__label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 65.5px;
+    width: 14px;
+    margin: 0 0 0 60px;
+  }
+  &__icon {
+    position: absolute;
+    fill: #74cfb7;
+    cursor: pointer;
+    z-index: 2;
+    transition: 0.3s linear;
+    &:hover {
+      fill: #079fc2;
+    }
+  }
+  &__search {
+    cursor: default;
+    width: 14px;
+    position: absolute;
+    z-index: 1;
+    border: none;
+    background: transparent;
+    &::placeholder {
+      color: #b7b7b7;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    &:focus {
+      cursor: text;
+      transition: 0.3s linear;
+      padding: 0 40px 0 0;
+      outline: none;
+      background: #f0f0f0;
+      right: 0;
+      top: 0;
+      height: 69.5px;
+      width: @container-width;
+    }
+  }
 }
 
 // offers
@@ -45,18 +215,6 @@ body {
     color: #1f252d;
     font-size: 14px;
     font-weight: 400;
-  }
-  &__icon {
-    margin: 0 14px 0 0;
-    &_lime {
-      fill: #b1d431;
-    }
-    &_gray {
-      fill: #aeaeae;
-    }
-    &_blue {
-      fill: #3072c4;
-    }
   }
   &__time {
     opacity: 0.6;
@@ -103,7 +261,9 @@ body {
     display: flex;
     justify-content: space-between;
     &-icon {
+      fill: #079fc2;
       margin: 0 8% 0 0;
+      transition: 0.3s linear;
     }
   }
   &__link {
@@ -121,6 +281,7 @@ body {
     font-size: 13px;
     font-weight: 500;
     text-transform: uppercase;
+    transition: 0.3s linear;
     &:nth-child(1) {
       width: 108px;
     }
@@ -132,6 +293,13 @@ body {
     }
     &:nth-child(4) {
       width: 121px;
+    }
+    &:hover {
+      .offers__tags-icon {
+        fill: #ffffff;
+      }
+      color: #ffffff;
+      background: #079fc2;
     }
   }
   &__more {
@@ -179,6 +347,10 @@ body {
     box-shadow: 0 4px 10px rgba(116, 207, 183, 0.46);
     border-radius: 4px;
     background: #079fc2;
+    transition: 0.3s linear;
+    &:hover {
+      background: #74cfb7;
+    }
   }
   &__all {
     display: block;
@@ -194,6 +366,11 @@ body {
     border-radius: 4px;
     background-color: #74cfb7;
     margin: 0 auto;
+    transition: 0.3s linear;
+    &:hover {
+      box-shadow: 0 4px 10px rgba(116, 207, 183, 0.46);
+      background: #079fc2;
+    }
   }
 }
 

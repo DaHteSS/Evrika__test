@@ -8,6 +8,168 @@ body {
   width: 1180px;
   margin: 0 auto;
 }
+.metro__icon {
+  margin: 0 14px 0 0;
+}
+.metro__icon_lime {
+  fill: #b1d431;
+}
+.metro__icon_gray {
+  fill: #aeaeae;
+}
+.metro__icon_blue {
+  fill: #3072c4;
+}
+.metro__icon_orange {
+  fill: #fbaa34;
+}
+.header_top {
+  background: #f7f7f7;
+}
+.header_bottom {
+  background: #ffffff;
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 187px;
+  height: 128px;
+  background: #74cfb7;
+  text-decoration: none;
+}
+.header__name,
+.header__address,
+.header__phone,
+.header__time {
+  color: #1f252d;
+  display: block;
+  font-size: 20px;
+}
+.header__name {
+  font-weight: 500;
+  margin: 0 0 9px 0;
+}
+.header__address {
+  font-size: 14px;
+  font-weight: 300;
+}
+.header__phone {
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 0 7px 0;
+}
+.header__time {
+  font-size: 14px;
+  font-weight: 300;
+}
+.header__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  box-shadow: 0 4px 10px rgba(116, 207, 183, 0.46);
+  border-radius: 4px;
+  background: #079fc2;
+  transition: 0.3s linear;
+}
+.header__btn:hover {
+  background: #74cfb7;
+}
+.header__menu {
+  box-sizing: border-box;
+  border-bottom: 4px solid #74cfb7;
+}
+.header__list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__item {
+  list-style-type: none;
+  box-sizing: border-box;
+  position: relative;
+}
+.header__item:nth-child(7):after,
+.header__item:last-child:after {
+  border: none;
+}
+.header__item:after {
+  content: '';
+  border-right: 1px solid #e1e1e1;
+  position: absolute;
+  top: 50%;
+  margin-top: -6px;
+  right: -18px;
+  height: 11px;
+}
+.header__link {
+  display: block;
+  color: #404853;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 25px 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.3s linear;
+}
+.header__link:hover {
+  color: #079fc2;
+}
+.header__label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 65.5px;
+  width: 14px;
+  margin: 0 0 0 60px;
+}
+.header__icon {
+  position: absolute;
+  fill: #74cfb7;
+  cursor: pointer;
+  z-index: 2;
+  transition: 0.3s linear;
+}
+.header__icon:hover {
+  fill: #079fc2;
+}
+.header__search {
+  cursor: default;
+  width: 14px;
+  position: absolute;
+  z-index: 1;
+  border: none;
+  background: transparent;
+}
+.header__search::placeholder {
+  color: #b7b7b7;
+  font-size: 14px;
+  font-weight: 400;
+}
+.header__search:focus {
+  cursor: text;
+  transition: 0.3s linear;
+  padding: 0 40px 0 0;
+  outline: none;
+  background: #f0f0f0;
+  right: 0;
+  top: 0;
+  height: 69.5px;
+  width: 1180px;
+}
 .offers {
   background: #f7f7f7;
   padding: 60px 0 49px 0;
@@ -43,18 +205,6 @@ body {
   color: #1f252d;
   font-size: 14px;
   font-weight: 400;
-}
-.offers__icon {
-  margin: 0 14px 0 0;
-}
-.offers__icon_lime {
-  fill: #b1d431;
-}
-.offers__icon_gray {
-  fill: #aeaeae;
-}
-.offers__icon_blue {
-  fill: #3072c4;
 }
 .offers__time {
   opacity: 0.6;
@@ -100,7 +250,9 @@ body {
   justify-content: space-between;
 }
 .offers__tags-icon {
+  fill: #079fc2;
   margin: 0 8% 0 0;
+  transition: 0.3s linear;
 }
 .offers__link {
   display: flex;
@@ -116,6 +268,7 @@ body {
   font-size: 13px;
   font-weight: 500;
   text-transform: uppercase;
+  transition: 0.3s linear;
 }
 .offers__link:nth-child(1) {
   width: 108px;
@@ -128,6 +281,13 @@ body {
 }
 .offers__link:nth-child(4) {
   width: 121px;
+}
+.offers__link:hover {
+  color: #ffffff;
+  background: #079fc2;
+}
+.offers__link:hover .offers__tags-icon {
+  fill: #ffffff;
 }
 .offers__more {
   position: absolute;
@@ -172,6 +332,10 @@ body {
   box-shadow: 0 4px 10px rgba(116, 207, 183, 0.46);
   border-radius: 4px;
   background: #079fc2;
+  transition: 0.3s linear;
+}
+.offers__btn:hover {
+  background: #74cfb7;
 }
 .offers__all {
   display: block;
@@ -187,6 +351,11 @@ body {
   border-radius: 4px;
   background-color: #74cfb7;
   margin: 0 auto;
+  transition: 0.3s linear;
+}
+.offers__all:hover {
+  box-shadow: 0 4px 10px rgba(116, 207, 183, 0.46);
+  background: #079fc2;
 }
 .about {
   padding: 67px 0 0 0;
