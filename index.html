@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=d2bb83c1-1f80-46f9-8e03-440a1ba6df22&lang=ru_RU" type="text/javascript"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/jquery-ui.min.css">
   <link rel="stylesheet" href="css/normalize.css">
@@ -119,11 +120,11 @@
             </div>
             <div class="filter__radio">
               <label for="moscow" class="filter__label filter__label-radio">
-                <input type="radio" id="moscow" class="filter__radio-btn" name="filter__radio" checked>
+                <input type="radio" id="moscow" value="1" class="filter__radio-btn" name="filter__radio" checked>
                 Москва и Новая Москва
               </label>
               <label for="moscow-region" class="filter__label filter__label-radio">
-                <input type="radio" id="moscow-region" class="filter__radio-btn" name="filter__radio">
+                <input type="radio" id="moscow-region" value="2" class="filter__radio-btn" name="filter__radio">
                 Московская область
               </label>
             </div>
@@ -133,47 +134,44 @@
               <option value="0">Станция метро</option>
               <option value="1">Комсомольская</option>
               <option value="2">Строгино</option>
-              <option value="3">Комсомольская</option>
-              <option value="4">Строгино</option>
-              <option value="5">Комсомольская</option>
-              <option value="6">Строгино</option>
-              <option value="7">Комсомольская</option>
-              <option value="8">Строгино</option>
+              <option value="3">Октябрьское поле</option>
+              <option value="4">Киевская</option>
+              <option value="5">Славянский бульва</option>
+              <option value="6">Мякинино</option>
+              <option value="7">Щукинская</option>
+              <option value="8">Октябрьская</option>
             </select>
             <select name="type" class="filter__select_hidden">
               <option value="0">Тип жилья</option>
-              <option value="1">Тип жилья</option>
-              <option value="2">Тип жилья</option>
-              <option value="3">Тип жилья</option>
-              <option value="4">Тип жилья</option>
+              <option value="1">Новостройка</option>
+              <option value="2">Вторичка</option>
             </select>
             <select name="space" class="filter__select_hidden">
               <option value="0">Площадь</option>
-              <option value="1">Площадь</option>
-              <option value="2">Площадь</option>
+              <option value="1">30&nbsp;м&sup2;</option>
+              <option value="2">74&nbsp;м&sup2;</option>
+              <option value="2">75&nbsp;м&sup2;</option>
+              <option value="2">177&nbsp;м&sup2;</option>
             </select>
             <select name="finish" class="filter__select_hidden">
               <option value="0">Тип отделки</option>
-              <option value="1">Тип отделки</option>
-              <option value="2">Тип отделки</option>
-              <option value="3">Тип отделки</option>
+              <option value="1">Черновая</option>
+              <option value="2">Чистовая</option>
             </select>
             <select name="deadline" class="filter__select_hidden">
               <option value="0">Срок сдачи</option>
-              <option value="1">Срок сдачи</option>
-              <option value="2">Срок сдачи</option>
-              <option value="3">Срок сдачи</option>
-              <option value="4">Срок сдачи</option>
-              <option value="5">Срок сдачи</option>
+              <option value="1">На заселении</option>
+              <option value="2">3 квартал 2019</option>
+              <option value="3">4 квартал 2019</option>
+              <option value="4">1 квартал 2020</option>
+              <option value="5">2 квартал 2020</option>
             </select>
             <input type="submit" class="filter__submit" value="Найти">
           </div>
         </form>
       </div>
     </section>
-    <div class="map">
-        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A2b84d1bb8e7a5daa4e1d0d22396701572dd19d795530e45eeef3a9a31e0e0d6e&amp;width=100%25&amp;height=535&amp;lang=ru_RU&amp;scroll=false"></script>
-    </div>
+    <div class="map" id="map"></div>
     <div class="offers">
       <div class="container">
         <article class="offers__item">
@@ -678,6 +676,7 @@
     </div>
   </footer>
   <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/map.js"></script>
   <script src="js/jquery-ui.min.js"></script>
   <script src="js/main.js"></script>
 </body>

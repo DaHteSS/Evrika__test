@@ -119,6 +119,9 @@ body {
     &:hover {
       background: #74cfb7;
     }
+    &:active {
+      background: darken(#74cfb7, 10%);
+    }
   }
   &__menu {
     display: flex;
@@ -168,6 +171,9 @@ body {
     &:hover {
       color: #079fc2;
     }
+    &:active {
+      color: darken(#079fc2, 10%);
+    }
     &_float {
       border-bottom: 2px solid transparent;
       padding: 15px 0;
@@ -199,6 +205,9 @@ body {
     transition: 0.3s linear;
     &:hover {
       fill: #079fc2;
+    }
+    &:active {
+      fill: darken(#079fc2, 10%);
     }
   }
   &__search {
@@ -353,6 +362,9 @@ body {
       color: #ffffff;
       background: #079fc2;
     }
+    &:active {
+      background: darken(#079fc2, 10%);
+    }
   }
   &__more {
     position: absolute;
@@ -403,6 +415,9 @@ body {
     &:hover {
       background: #74cfb7;
     }
+    &:active {
+      background: darken(#74cfb7, 10%);
+    }
   }
   &__all {
     display: block;
@@ -422,6 +437,9 @@ body {
     &:hover {
       box-shadow: 0 4px 10px rgba(116, 207, 183, 0.46);
       background: #079fc2;
+    }
+    &:active {
+      background: darken(#079fc2, 10%);
     }
   }
 }
@@ -463,6 +481,9 @@ body {
       }
       box-shadow: 0 4px 10px rgba(116, 207, 183, 0.46);
       background: #079fc2;
+    }
+    &:active {
+      background: darken(#079fc2, 10%);
     }
   }
   &__icon {
@@ -569,8 +590,14 @@ body {
     background: #079fc2;
     transition: 0.3s linear;
     border: none;
+    &:focus {
+      outline: none;
+    }
     &:hover {
       background: #74cfb7;
+    }
+    &:active {
+      background: darken(#74cfb7, 10%);
     }
   }
   &__select {
@@ -638,6 +665,9 @@ body {
       background: #079fc2;
       color: #ffffff;
     }
+    &:active {
+      background: darken(#079fc2, 10%);
+    }
   }
   &__value {
     display: block;
@@ -665,6 +695,116 @@ body {
   background: #f7f7f7;
   &:focus {
     outline: none;
+  }
+}
+
+// map
+
+.map {
+  width: 100%;
+  height: 535px;
+  &__content {
+    display: flex;
+    width: 500px;
+    height: 373px;
+    box-shadow: 0 11px 49px -35px rgba(48, 35, 35, 0.5);
+    background: #ffffff;
+  }
+  &__arrow {
+    position: absolute;
+    left: 500px;
+    top: 88px;
+    border: 20px solid transparent;
+    border-left: 14px solid #ffffff;
+  }
+  &__close {
+    position: absolute;
+    left: 470px;
+    top: 15px;
+    display: block;
+    width: 13px;
+    height: 13px;
+    &:before {
+      content: url('../img/map/map__close.svg');
+    }
+  }
+  &__info {
+    padding: 22px 23px 20px 23px;
+    overflow-y: auto;
+    width: 100%;
+  }
+  &__title {
+    color: #1f252d;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 14px 0;
+  }
+  &__subway {
+    color: #404853;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  &__icon {
+    margin: 0 7px 0 0;
+  }
+  &__time {
+    margin: 0 0 0 9px;
+    opacity: 0.6;
+    color: #1f252d;
+    font-size: 13px;
+    font-weight: 300;
+  }
+  &__address {
+    color: #404853;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 10px 0;
+  }
+  &__table {
+    border-collapse: collapse;
+    box-sizing: border-box;
+    margin: 0 0 10px 0;
+  }
+  &__cell {
+    vertical-align: top;
+    box-sizing: border-box;
+    padding: 7px 0;
+    width: 55%;
+    opacity: 0.6;
+    color: #1f252d;
+    font-size: 13px;
+    font-weight: 300;
+    &_bordered-bottom {
+      border-bottom: 1px solid #e7e7e7;
+    }
+    &:nth-child(2) {
+      width: 45%;
+      opacity: 1;
+      font-weight: 400;
+      color: #404853;
+      padding-left: 10px;
+    }
+  }
+  &__link {
+    display: block;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    box-shadow: 0 4px 10px rgba(116, 207, 183, 0.46);
+    border-radius: 4px;
+    background: #079fc2;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 400;
+    transition: 0.3s linear;
+    &:hover {
+      background: #74cfb7;
+    }
+    &:active {
+      background: darken(#74cfb7, 10%);
+    }
   }
 }
 
