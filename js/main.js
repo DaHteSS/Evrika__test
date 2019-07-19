@@ -14,7 +14,7 @@ $(".header__search").focusout(function() {
   }
 });
 // Adding range in form.
-// К сожалению, не смог разобраться, как сделать ползунок цен без плагина...Да и с плагином не особо получилось.
+// К сожалению, не смог разобраться, как сделать ползунок цен без плагина...Да и с плагином не особо получилось. Есть мысли, что нужно делать с помощью input type=number.
 $(".filter__range").slider({
   min: 1,
   max: 69,
@@ -23,38 +23,64 @@ $(".filter__range").slider({
   values: [0, 69]
 });
 // Adding styles for float menu.
+function addingClass() {
+  $(".header").addClass("header_float");
+  $(".header_top").addClass("header_top_float");
+  $(".header__logo").addClass("header__logo_float");
+  $(".header__logo-img_float").css("display", "block");
+  $(".header__logo-img").css("display", "none");
+  $(".header__name").css("display", "none");
+  $(".header__name_float").css("display", "block");
+  $(".header_bottom").addClass("header_bottom_float");
+  $(".header__menu").addClass("header__menu_float");
+  $(".header__link").addClass("header__link_float");
+  $(".header__label").addClass("header__label_float");
+  $(".header__search").addClass("header__search_float");
+  $(".header__btn").addClass("header__btn_float");
+  $(".main").css("margin", "197.5px 0 0 0");
+}
+
+function removingClass() {
+  $(".header").removeClass("header_float");
+  $(".header_top").removeClass("header_top_float");
+  $(".header__logo").removeClass("header__logo_float");
+  $(".header__logo-img_float").css("display", "none");
+  $(".header__logo-img").css("display", "block");
+  $(".header__name").css("display", "block");
+  $(".header__name_float").css("display", "none");
+  $(".header_bottom").removeClass("header_bottom_float");
+  $(".header__menu").removeClass("header__menu_float");
+  $(".header__link").removeClass("header__link_float");
+  $(".header__label").removeClass("header__label_float");
+  $(".header__search").removeClass("header__search_float");
+  $(".header__btn").removeClass("header__btn_float");
+  $(".main").css("margin", "0");
+}
+
 $(document).on("scroll", function() {
   let position = $(window).scrollTop();
-  if (position > 350) {
-    $(".header").addClass("header_float");
-    $(".header_top").addClass("header_top_float");
-    $(".header__logo").addClass("header__logo_float");
-    $(".header__logo-img_float").css("display", "block");
-    $(".header__logo-img").css("display", "none");
-    $(".header__name").css("display", "none");
-    $(".header__name_float").css("display", "block");
-    $(".header_bottom").addClass("header_bottom_float");
-    $(".header__menu").addClass("header__menu_float");
-    $(".header__link").addClass("header__link_float");
-    $(".header__label").addClass("header__label_float");
-    $(".header__search").addClass("header__search_float");
-    $(".main").css("margin", "197.5px 0 0 0");
+  if($(window).width() > 970) {
+    if (position > 350) {
+      addingClass();
+    } else {
+      removingClass();
+    }
   } else {
-    $(".header").removeClass("header_float");
-    $(".header_top").removeClass("header_top_float");
-    $(".header__logo").removeClass("header__logo_float");
-    $(".header__logo-img_float").css("display", "none");
-    $(".header__logo-img").css("display", "block");
-    $(".header__name").css("display", "block");
-    $(".header__name_float").css("display", "none");
-    $(".header_bottom").removeClass("header_bottom_float");
-    $(".header__menu").removeClass("header__menu_float");
-    $(".header__link").removeClass("header__link_float");
-    $(".header__label").removeClass("header__label_float");
-    $(".header__search").removeClass("header__search_float");
-    $(".main").css("margin", "0");
+    if (position > 200) {
+      addingClass();
+    } else {
+      removingClass();
+    }
   }
 });
+
+// mobile menu
+$(".header__open").on("click", () => {
+  $(".header__list").css("display", "block");
+})
+$(".header__close").on("click", () => {
+  $(".header__list").css("display", "none");
+})
 
 // custom select
 // Взял код из одного своего проекта.
@@ -115,11 +141,11 @@ $(".filter__select_hidden").each(function() {
   });
 });
 
-$(document).mouseup(function (e){
+$(document).mouseup(function(e) {
   let gap = $(".filter__gap.on"),
-      list = $(".filter__list");
+    list = $(".filter__list");
   if (!gap.is(e.target) && gap.has(e.target).length === 0) {
     gap.removeClass("on");
-    list.slideUp(selectDur)
+    list.slideUp(selectDur);
   }
 });

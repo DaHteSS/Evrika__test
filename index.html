@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://api-maps.yandex.ru/2.1/?apikey=d2bb83c1-1f80-46f9-8e03-440a1ba6df22&lang=ru_RU" type="text/javascript"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="css/jquery-ui.min.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
@@ -21,7 +22,7 @@
         </a>
         <div class="header__content_left">
           <span class="header__name">Агентство недвижимости</span>
-          <span class="header__name header__name_float">Офис «В Беляево»</span>
+          <span class="header__name header__name_float">Офис &laquo;В&nbsp;Беляево&raquo;</span>
           <span class="header__address">
             <svg class="metro__icon metro__icon_orange" width="16" height="12" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 12">
               <path d="M191.02946,1888l2.60936,-4.5354l1.08336,3.07183h-0.87476v1.35178h5.21148v-1.35178h-0.99468l-3.74354,-9.84756l-3.29122,6.06305l-3.29121,-6.06305l-3.74355,9.84756h-0.9947v1.35178h5.2115v-1.35178h-0.87477l1.08336,-3.07183l2.60937,4.5354" id="Path-0"/>
@@ -29,12 +30,12 @@
                 <use xlink:href="#Path-0" fill-opacity="1"/>
               </g>
             </svg>
-            Москва, «Беляево», ул. Миклухо-Маклая, д. 43
+            Москва, &laquo;Беляево&raquo;, ул.&nbsp;Миклухо&nbsp;-&nbsp;Маклая, д. 43
           </span>
         </div>
-        <div class="header__content_right">
+        <div class="header__content_right header__content_right-float">
           <a href="tel:+74952760303" class="header__phone">+7 (495) 276-03-03</a>
-          <span class="header__time">Пн—Пт: с 09.00 до 21.00, Сб—Вс: с 10.00 до 17.00</span>
+          <span class="header__time">Пн&mdash;Пт:&nbsp;с 09.00 до 21.00, Сб&nbsp;&mdash;&nbsp;Вс:&nbsp;с&nbsp;10.00 до&nbsp;17.00</span>
         </div>
         <a href="#" class="header__btn">Бесплатная консультация</a>
       </div>
@@ -42,7 +43,11 @@
     <div class="header_bottom">
       <div class="container">
         <nav class="header__menu">
+          <button class="header__open"></button>
           <ul class="header__list">
+            <li class="header__item">
+              <button class="header__close"></button>
+            </li>
             <li class="header__item">
               <a href="#" class="header__link">новостройки</a>
             </li>
@@ -171,7 +176,22 @@
         </form>
       </div>
     </section>
-    <div class="map" id="map"></div>
+    <div class="map" id="map">
+      <button class="map__btn">
+        <svg class="map__btn-icon" width="28" height="32" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 28 32">
+          <path d="M1363.76959,723.99041c0.62041,0 1.12327,-0.50286 1.12327,-1.11674v-20.3951l5.06775,5.06776c0.21551,0.21551 0.50286,0.32653 0.79021,0.32653c0.28734,0 0.57469,-0.11102 0.7902,-0.32653c0.43755,-0.43755 0.43755,-1.14939 0,-1.58694l-6.98122,-6.98123c-0.43756,-0.43755 -1.14939,-0.43755 -1.58694,0l-6.9747,6.98123c-0.43755,0.43755 -0.43755,1.14939 0,1.58694c0.43755,0.43755 1.14939,0.43755 1.58694,0l5.06776,-5.06776v20.3951c0,0.61388 0.49632,1.11674 1.11673,1.11674z" id="arrow"/>
+          <path d="M1377.54612,693.12327c0,-0.62041 -0.50285,-1.12327 -1.11673,-1.12327h-25.31266c-0.6204,0 -1.11673,0.50286 -1.11673,1.12327c0,0.6204 0.50286,1.12326 1.11673,1.12326h25.31266c0.62041,-0.00653 1.11673,-0.50939 1.11673,-1.12326z" id="arrow-line"/>
+          <g transform="matrix(1,0,0,1,-1350,-692)">
+            <g opacity="0.5">
+              <use xlink:href="#arrow" fill="#20262e" fill-opacity="1"/>
+            </g>
+            <g opacity="0.5">
+              <use xlink:href="#arrow-line" fill="#20262e" fill-opacity="1"/>
+            </g>
+          </g>
+        </svg>
+      </button>
+    </div>
     <div class="offers">
       <div class="container">
         <article class="offers__item">
@@ -606,8 +626,8 @@
     </div>
     <section class="about">
       <div class="container about__container">
-        <h3 class="about__title">Офис Миэль «В Беляево»</h3>
-        <p class="about__text">— это команда профессиональных экспертов и агентов по недвижимости с большим багажом риелторской и юридической практики. Основные направления Миэль «В Беляево» – это продажа элитной недвижимости и квартир в новостройках.</p>
+        <h3 class="about__title">Офис Миэль &laquo;В Беляево&raquo;</h3>
+        <p class="about__text">— это команда профессиональных экспертов и агентов по недвижимости с большим багажом риелторской и юридической практики. Основные направления Миэль &laquo;В Беляево&raquo; – это продажа элитной недвижимости и квартир в новостройках.</p>
         <h3 class="about__subject">Наши специалисты выполняют широкий спектр операций, связанных с недвижимостью:</h3>
         <ul class="about__list">
           <li class="about__item">
@@ -616,7 +636,7 @@
                 <image xlink:href="data:image/png;base64,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" width="53" height="45" transform="matrix(1,0,0,1,230,3355)" ></image>
               </g>
             </svg>
-            <span class="about__content">Подбор квартир</span>
+            <span class="about__content about__content_1">Подбор квартир</span>
           </li>
           <li class="about__item">
             <svg class="about__icon" width="41" height="49" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 41 49">
@@ -624,7 +644,7 @@
                 <image xlink:href="data:image/png;base64,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" width="41" height="49" transform="matrix(1,0,0,1,413,3353)" ></image>
               </g>
             </svg>
-            <span class="about__content">Проверка застройщика и/или&nbsp;собственника</span>
+            <span class="about__content about__content_2">Проверка застройщика и/или&nbsp;собственника</span>
           </li>
           <li class="about__item">
             <svg class="about__icon" width="35" height="41" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 35 41">
@@ -632,7 +652,7 @@
                 <image xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAApCAYAAAC/QpA/AAADrklEQVRYR82YTWgdVRTHf/95NZqmRWoFiw0upIVaXNn6gR+INmqdeTW4sNSAii604kpEECoY8aMLQURpRUUFKxZSEGsyz2pLtWhBrXWjKDYqKnVRISrEtDbJe0fuzTQ2ea+dTO5LmjObWcy95zfn/O8991xZhZ3AjRgLOFMm/gH2ylIsY/gKYRiaNab//a12PsdgxAHFXDFrEJMcWYUvMS4/EZkvlHDVGYNJ+Ry4cg5GZk6laa7DWEoX4g6MGqIWrCcjQkQYO5TwzsnzTRRwg8hY6gfcGQxRP8F2JXQVg+mhlYUsxyj53SfUhHuqDNKv9RwrBBPqu8j43DS5yWwPi6lSYrgJmmkhokRVHQxMBs2FsZSXgfu86JplbjHAG0p4sFCaLOVR4F6g6oLUBB5X80rAm0p4rhCMT1M3EU9gcgUt0MxVwCeRuutTnpumQN+FhufC2C6WUWOVn7XWBAFHmfYiDmotPxZKkz90GbcV+sWpfCzeV0xnMZg+rkPcjBjxJSHUxkrBWRgfqcynhWBCfRcZn6uZIpOFfjstGPuQNt3C0OmcWw8tLGATxtXI16CxbcHVOPk0va2EbdNOk6U87I8TsBLja8QOxX6HrjP7mHM4xjcYy04BvU0JdxeGsR5KtPEeUPaDxWGM9mwi94d3NQRyNW2UJYwi5mWRce9uNz/KL9Oq2ll92gi8S43HtI5+6+NSIl7AWIPYpJhnZ1wzvmIf5w9ggAtYqtWMnHBqfSwi4jeMEYZYovUMhwDlCtgqXIPxGeJVxTww2Zml7AY6iFihW/lhZmF6WUHE98AeJdzUAOY74BKnDXVyZEZh/GpMOQT+6FlWmXQ8TakX7luITxRzQwiI9zOhozxFq2IVrgdcA9wGbAEOIVZhfmkewehQmW9nBSaLzk/AxQ0c7lfCtaEgU49MirsdOIDYh9iMcRHwK/A8xnLESsU42CCbaprctv404n7FvHaSZh4HngI2KuGVIJICmjmIcRnDLNLt/G27OE9r+dMfvKr0Oz0pyXbnAKLcyNhOLmQevwP7ERswupEX7hZKbGbUn0nas6U9GMCSv5os9a2ta3F/BpYCZyOGspX1V/bejlijmL0zC1NhO8aGrEAOIB4h4gOqdGE8A8zPALYq4aHmwUDdzZVVeBGjE7GVKi9pHUfHBbybcxnxfdU9GK8roTsIJu/mynqZTyutjdrRcahezqfEoGKOB8FMutNzc0287RT/+qoMC0/jyAm3xetpOlZ32zmH7oH/Ay5dO1mwZ4/KAAAAAElFTkSuQmCC" width="35" height="41" transform="matrix(1,0,0,1,644,3356)" ></image>
               </g>
             </svg>
-            <span class="about__content">Проверка и оформление документов</span>
+            <span class="about__content about__content_3">Проверка и оформление документов</span>
           </li>
           <li class="about__item">
             <svg class="about__icon" width="38" height="46" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 38 46">
@@ -640,7 +660,7 @@
                 <image xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAuCAYAAABEbmvDAAAHLUlEQVRYR8WZC4xU5RXHf2dmlgWU+kh8G7UCWiUWVMD3Axd1995dqyGi9dGiYqsoBon4NhqDGl8xVGPRxtJWRcUgIbP3zlIQihsftVKRouIj+E6r+MIHyMLcY74zd8e7uzM7M8uSnmST3ft99zv/e875zvmfs0IVojnGkKeFFBNQ9gAEWIewECUrPs9VcUxNW5yCsqLLGMgG7gWmVDh1PhmmyKl8VpP2XjaXBabL2J4NBMDx8fvtCE8TsZIUc1CGAu8AewGDEV5HaJYm3u8PcOWBhTyIcimQR7hUPP7kFGqOA1H+A2SIGIHwM2AhsBtCSBPNIujWgisJTFsZh7DUDlcmSzOPdCrSgNnA74HX8DjUgdCQI4ElKNsB54jPE9sGWMgfUKYi/EM8xiVA/RqYi7AFpUV82oprIY+gXOjWxefcbQXMfX0DMF187jPDhab0IZRMDOx6vmeWTKQjdnEDEUsQ3mIzY+RXfLs14Hq4Mg76fwPDgb8AHyA0oBwbK9oE1NvvwiqUZcBGYH9gIrCJPAfJabzXv8AWMoQMLwO/KHGwc/FTpJiEcnFJxWIp43Dx+LhfgcVua48t9CbwHGJf/3fxeLUYU60cTYrxKGOBAWC38whgLWnGSCNfbgtg81DORPireEyqRoEG3AXMcBeGXTlFRrO5mvfK7SmdLkKmodyH8AWbGCZn8HUlJRqyGmUEcJP4zKy0v9J6aWCL2JUtlsEHIVwjnlmjrGgr5yE8ahtSjJUm/lVJcaX13jL/3ShXWeaHC8SPFXc7UVsZjzDfYkx4SjzOrqS0mvXegNWjxhpccDu5jg5md7pVQ9z6ZODu2LIfkWZ0fxXy3tlFwO7APOC4OG/9F3gb2AIMRdkvfv4Wec6SFl6rxhrV7OkVmKWOLINJcz3K74BduhwqfA/8DeVW8flfNQqr3VMRWDFvheyNMIKIn6OkSPM+edZIM2urVVbLvqqB1XJof+ytCZjm2A9lXyK+A76ijk/lVHNnv0tFYHE6uADhcGDvmHO5Au4AfYnyIjCHDO39CbJ8ugg4BLgZmNAt4F0NHIwysJuZVgCTxWdlf5ivdObPcRRKDmWHLkqUCeR5CaGeOg4g4mlgSHGPs6IwWZp4cmvB9eRjBU6/FGVPxMrSDJQrgaMRZojHPZZGcnhEZBHWotZF3ZTIdw3ixdS8jwh7AgvIAY3ASiKapYVPNOAy4AGEjxnEcBnHDxrwT6sKwgPiMTWuBK3AeOBl8Y0C9Vm6ALMOKGJNfNqhnfGiLocpb5jbUvhEOIbrqoAr2iOliVVmxVYOQmyfuxwXicef+4qsK7CQmSg3AG3i05Q8VEMeQ63JcM3I+ri1Wyq+9QZF0YA/ApcAs8W39q9P0h3YCyhHAdPEZ1YXhTlOJGIZwmaUunjtXPGZ22Wfa5Q30kieF10YdK6po+x1TEF5Vnxe6fLOPAaxM4NlPF90Pi8Ci19cY0EPTcnWrHh4yAqUw+K/P6SDkdWQSHNzwDnA453USBewIwMZhXKy60XjDOB6UmsJfwKWZSxpXkKJEH4pXhwrSTeFXIzycPxolvhMq9ZPGph7nZs/BLtgJ8WdWPKImeLb7U4Ay/FbImvX3iFilLSwobtSDdnFxgPCzkSMlGZcs1JW9BZSHME+RHZTHTBXPZKyDmgHDrauTLhRPG7rCizgdiODQlY8TiunTds4jIgh4rG87J5Cgh7tunUwVyXlW8TGCYvIsMARSw1ZgHJ6aWAhz6CcgXCveEapaxZdzA50mLvcKCEpq4Fv4iS9XDxOTC5qQBZoRrhWPO4sWsy67428ijIMuFB85tSMqhDgo6DYe65GLJDnk2cVGc4j4iGgVIopAIOrxTeqXoixOLG+gSDkOVJarBOvWczNeVZYSskzTFos0E2KwS8s5zsaZCJ5zTKclMWeu7G728jBMeLNPFEAVuh0FuPa+zT795W+JCy2Ib5AbrBXABZyOcr9JIEFXAvc0cMCyvkFYAFXgCXU58UvDk9qt1iWkaSM9rghyyjxrXEpD6yNYUS0ohyYUDaXLUwXfcXxUAvYi4AHxbeC3SfR0Dqndw1YmqHSGNfTMhaLLXlC3ALuZO8KvxGPdaIL2Y06sihjcCZs5rG+oNI2RpC3TuoK3KhTuYc0D0ujAS3pyqI1XUmqo57TWd85JhUNGA0sBnYEziJNOx092OlPWFMI7qeJtclZqwbG3fbt9lEviM8xlYCVMoQD5uapbq5a4PFKB1Is0iXfKQQNKxmALyezPo7TGdBjxlFMPaWCvzfPOGDHIzY/dTmsFnmTeo5LMgINjVI7gphHWZykPTUDi7/WjQIOsDFlJUmRIk+GDK+XGs5ZzKbISwufJ4/SwOZsLnEvEb9HmeqhtWL7VglnpXWdxwC2s3TggE1HrDJMIcXbvU0dtz2wwGrf1SU+wLGUY8WzGvp/sFjIVNSoTPK/Ja74LSLNpHJV5kdxvp7tQ5UorwAAAABJRU5ErkJggg==" width="38" height="46" transform="matrix(1,0,0,1,841,3354)" ></image>
               </g>
             </svg>
-            <span class="about__content">Юридическая поддержка</span>
+            <span class="about__content about__content_4">Юридическая поддержка</span>
           </li>
           <li class="about__item">
             <svg class="about__icon" width="49" height="43" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 49 43">
@@ -648,7 +668,7 @@
                 <image xlink:href="data:image/png;base64,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" width="49" height="43" transform="matrix(1,0,0,1,1030,3355)" ></image>
               </g>
             </svg>
-            <span class="about__content">Сопровождение сделки</span>
+            <span class="about__content about__content_5">Сопровождение сделки</span>
           </li>
         </ul>
         <p class="about__text">Если вы хотите купить квартиру в элитном жилом комплексе, то мы поможем вам это сделать не только максимально комфортно и безопасно, но и выгодно – мы всегда сообщаем о самых интересных акциях и выбираем действительно горячие предложения. Кроме того, мы готовы помочь оформить выгодную ипотеку. Каждый клиент становится для нас партнером, которого мы готовы защитить от всевозможных рисков и поддержать на всех этапах проведения сделки.</p>
@@ -657,7 +677,7 @@
   </main>
   <footer class="footer">
     <div class="container footer__container">
-      <p class="footer__copyright">&copy; 2009–2016 Офис «В Беляево». При использовании материалов ссылка на сайт обязательна</p>
+      <p class="footer__copyright">&copy; 2009–2016 Офис &laquo;В Беляево&raquo;. При использовании материалов ссылка на сайт обязательна</p>
       <a href="https://aevrika.ru/" class="footer__link">
           <svg class="footer__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="20" viewBox="0 0 15 20">
               <path id="lamp" d="M1017.103 3674c-3.922.007-7.107 3.202-7.103 7.124.002.812.141 1.594.394 2.322a7.14 7.14 0 0 0 2.267 3.208 4.976 4.976 0 0 1 1.766 3.124h.002a.238.238 0 0 0 .154.199c.003 0 .007 0 .01.002l.016.004a9.252 9.252 0 0 0 5.042-.007h.002v-.002a.246.246 0 0 0 .16-.173c0-.013.003-.025.003-.035a4.98 4.98 0 0 1 1.957-3.28 7.154 7.154 0 0 0 2.07-3.064c.253-.729.387-1.51.385-2.32-.007-3.922-3.204-7.109-7.125-7.102m2.99 11.11a7.111 7.111 0 0 0-2.074 3.069 6.925 6.925 0 0 1-1.797.001 7.19 7.19 0 0 0-2.268-3.213v-.002a4.986 4.986 0 0 1-1.82-3.84 4.989 4.989 0 0 1 4.973-4.992 4.985 4.985 0 0 1 2.986 8.977"/>
@@ -671,7 +691,7 @@
                 </g>
               </g>
             </svg>
-        Разработка и продвижение — «ЭВРИКА»
+        Разработка и продвижение — &laquo;ЭВРИКА&raquo;
       </a>
     </div>
   </footer>
